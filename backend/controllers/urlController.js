@@ -17,9 +17,12 @@ exports.generateShortUrl=catchAsyncErrors(async(req,res,next)=>{
         visitHistory:[],
         createdBy:req.user._id,
     });
+    const baseURL = 'https://routify-ene3.vercel.app/';
+    const shortUrl = `${baseURL}${shortID}`;
 
     res.status(201).json({
         success:true,
+        shortUrl,
         url
     });
 
