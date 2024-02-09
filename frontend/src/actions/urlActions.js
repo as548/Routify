@@ -1,6 +1,8 @@
 // urlActions.js
 import axios from "axios";
-import { CLEAR_ERRORS, CREATE_URL_FAIL, CREATE_URL_REQUEST, CREATE_URL_SUCCESS, DELETE_URL_FAIL, DELETE_URL_REQUEST, DELETE_URL_SUCCESS, EDIT_URL_FAIL, EDIT_URL_REQUEST, EDIT_URL_SUCCESS, MY_URLS_FAIL, MY_URLS_REQUEST, MY_URLS_SUCCESS } from "../constants/urlConstants";
+import { CLEAR_ERRORS, CREATE_URL_FAIL, CREATE_URL_REQUEST, CREATE_URL_SUCCESS, DELETE_URL_FAIL, DELETE_URL_REQUEST, DELETE_URL_SUCCESS, EDIT_URL_FAIL, EDIT_URL_REQUEST, EDIT_URL_RESET, EDIT_URL_SUCCESS, MY_URLS_FAIL, MY_URLS_REQUEST, MY_URLS_SUCCESS } from "../constants/urlConstants";
+
+const baseURL = 'https://routify-ene3.vercel.app/api/v1'; // Add this line
 
 // Create New URL
 export const createUrl = (url) => async (dispatch) => {
@@ -13,7 +15,7 @@ export const createUrl = (url) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post("/api/v1/url/new", { longUrl: url.longUrl }, config);
+    const { data } = await axios.post(`${baseURL}/url/new`, { longUrl: url.longUrl }, config);
 
     dispatch({ type: CREATE_URL_SUCCESS, payload: data });
   } catch (error) {
@@ -29,7 +31,7 @@ export const getUrls = () => async (dispatch) => {
   try {
     dispatch({ type: MY_URLS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/urls/me");
+    const { data } = await axios.get(`${baseURL}/urls/me`);
     console.log('Data received:', data);  // Add this line
     dispatch({ type: MY_URLS_SUCCESS, payload: data.userUrls });
   } catch (error) {
@@ -44,7 +46,7 @@ export const deleteUrl = (shortId) => async (dispatch) => {
     try {
       dispatch({ type: DELETE_URL_REQUEST });
   
-      const { data } = await axios.delete(`/api/v1/delete/${shortId}`);
+      const { data } = await axios.delete(`${baseURL}/delete/${shortId}`);
   
       dispatch({ type: DELETE_URL_SUCCESS, payload: data.message });
     } catch (error) {
@@ -66,7 +68,7 @@ export const editUrl = (urlId, newShortId) => async (dispatch) => {
         },
       };
   
-      const { data } = await axios.put(`/api/v1/edit/${urlId}`, { newShortId }, config);
+      const { data } = await axios.put(`${baseURL}/edit/${urlId}`, { newShortId }, config);
   
       dispatch({ type: EDIT_URL_SUCCESS, payload: data });
     } catch (error) {
