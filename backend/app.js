@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: 'https://routify-tau.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
