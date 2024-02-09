@@ -82,13 +82,7 @@ const MyUrls = () => {
                                         </td>
                                         <td className="short-url-container">
                                             <div className="short-url">
-                                                <a
-                                                    href={`${apiBaseUrl}/${url.shortId}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    {`${apiBaseUrl}/${url.shortId}`}
-                                                </a>
+                                                <p>{url.shortId}</p>
                                             </div>
                                             <button
                                                 className="copy-link-btn"
