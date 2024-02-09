@@ -10,7 +10,7 @@ const Home = () => {
   const { loading, url, error } = useSelector((state) => state.newUrl);
 
   const [inputUrl, setInputUrl] = useState('');
-  const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:4000/api/v1';
+  const apiBaseUrl = 'https://routify-tau.vercel.app/';
   const handleSubmit = (e) => {
     e.preventDefault();
 
