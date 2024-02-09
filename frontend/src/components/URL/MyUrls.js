@@ -12,8 +12,12 @@ const MyUrls = () => {
     const alert = useAlert();
     const navigate = useNavigate();
     const { loading, userUrls, error } = useSelector((state) => state.myUrls);
-    const apiBaseUrl = 'https://routify-tau.vercel.app';
     
+    const [apibaseUrl] = useState(() =>
+    process.env.NODE_ENV === 'production'
+      ? window.location.hostname
+      : window.location.hostname + ':' + window.location.port
+  );
     useEffect(() => {
         dispatch(getUrls());
         return () => {
