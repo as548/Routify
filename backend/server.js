@@ -15,9 +15,8 @@ if (process.env.NODE_ENV !== "production") {
 
 // connecting to the database
 connectDatabase();
-
 const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+    console.log(`Server is working on https://routify-ene3.vercel.app/`);
 });
 
 // Unhandled Promise Rejection
