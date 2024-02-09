@@ -12,7 +12,7 @@ const MyUrls = () => {
     const alert = useAlert();
     const navigate = useNavigate();
     const { loading, userUrls, error } = useSelector((state) => state.myUrls);
-    const apiBaseUrl = 'https://routify-tau.vercel.app/';
+    const apiBaseUrl = 'https://routify-tau.vercel.app';
     
     useEffect(() => {
         dispatch(getUrls());
