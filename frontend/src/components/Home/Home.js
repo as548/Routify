@@ -10,7 +10,7 @@ const Home = () => {
   const { loading, url, error } = useSelector((state) => state.newUrl);
 
   const [inputUrl, setInputUrl] = useState('');
-  const apiBaseUrl = 'https://routify-tau.vercel.app/';
+  const apiBaseUrl = 'https://routify-tau.vercel.app';
   const handleSubmit = (e) => {
     e.preventDefault();
 
