@@ -1,0 +1,92 @@
+/* Header.css */
+header {
+    background-color: #897676;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+ 
+  .logo-img {
+    width: 80px; /* Set the width to your desired size */
+    height: 40px; /* Maintain the aspect ratio */
+  }
+  
+  .nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto";
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(231, 222, 222);
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: rgb(81, 51, 58);
+  }
+  
+  /* Header.css */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+  
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    nav {
+      flex-direction: column;
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #897676;
+    }
+  
+    nav.nav-open {
+      display: flex;
+    }
+  
+    nav.nav-open ul {
+      flex-direction: column; /* Ensure content opens vertically */
+    }
+  
+    nav li {
+      margin: 0;
+      text-align: center;
+      padding: 10px;
+    }
+  }

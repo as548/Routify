@@ -1,0 +1,35 @@
+/* Home.css */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ecebe6; /* Set a background color or use an image */
+    font-family: "Roboto";
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4e484a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .link{
+    text-decoration: none;
+    font-family: "Roboto";
+  }
+  

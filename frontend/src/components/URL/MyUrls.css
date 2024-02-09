@@ -1,0 +1,95 @@
+/* MyUrls.css */
+.Heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
+}
+
+.my-urls-container {
+    background-color: #f1eaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set height to full viewport height */
+    /* margin: 20px; */
+    padding: 20px;
+}
+
+.heading-section {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.url-table-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    height: 100%; /* Set height to full container height */
+}
+
+.url-table {
+    max-width: 100%; /* Set max-width to 100% */
+    border-collapse: collapse;
+}
+
+.url-table th,
+.url-table td {
+    font-family: "Roboto";
+    border: 1px solid #7e5d5d;
+    padding: 10px;
+    text-align: left;
+}
+
+.url-table th {
+    background-color: rgb(81, 51, 58);
+}
+
+.original-url,
+.shortUrl {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.original-url:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.editbtn {
+    background-color: rgb(69, 63, 54);
+    margin: 5px;
+    padding: 6px;
+    text-decoration: none;
+    color: white;
+}
+.copy-link-btn{
+    background-color: rgb(69, 63, 54);
+}
+
+@media only screen and (max-width: 768px) {
+    .my-urls-container {
+        margin: 10px;
+    }
+
+    .url-table th,
+    .url-table td {
+        font-size: 12px;
+    }
+
+    .editbtn {
+        font-size: 12px;
+    }
+}
