@@ -12,7 +12,7 @@ const MyUrls = () => {
     const alert = useAlert();
     const navigate = useNavigate();
     const { loading, userUrls, error } = useSelector((state) => state.myUrls);
-    const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:4000/api/v1';
+    const apiBaseUrl = 'https://routify-tau.vercel.app/';
     
     useEffect(() => {
         dispatch(getUrls());
