@@ -96,7 +96,7 @@ exports.handleUrlRedirection =catchAsyncErrors(async (req, res, next) => {
           message: 'URL not found',
         });
       }
-  
+   
       // Redirect to the original URL
       return res.redirect(url.redirectURL);
     } catch (error) {
